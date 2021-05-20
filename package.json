@@ -1,0 +1,24 @@
+{
+  "name": "forum007",
+  "version": "1.0.0",
+  "description": "project 2 deliverable",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrenniusXIV/forum007.git"
+  },
+  "author": "Lane Pemberton;Brent\u001b[D\u001b[D\u001b\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrenniusXIV/forum007/issues"
+  },
+  "homepage": "https://github.com/BrenniusXIV/forum007#readme",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1"
+  }
+}
