@@ -1,0 +1,37 @@
+table users {
+  id int pk
+  user_name varchar
+  email varchar
+  created_at varchar
+  user_likes varchar
+}
+
+table topics {
+  id int pk
+  user_id int
+  type varchar
+  created_at varchar
+  threads_id int
+}
+
+table threads {
+id int pk
+threads_name varchar
+topics_id int
+type varchar
+comments_id int
+}
+
+table comments {
+  id int pk 
+  comment_text varchar
+  likes_score int
+  threads_id int
+  }
+
+ref {
+  threads.topics_id > topics.id
+}
+ref {
+  comments.threads_id > threads.id
+}
