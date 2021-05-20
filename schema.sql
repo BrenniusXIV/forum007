@@ -44,7 +44,7 @@ CREATE TABLE comments (
 INSERT INTO users (id, name_firstlast, username, password_user, email, create_date)
 VALUES FROM ();
 
-INSERT INTO comments (id, thread_id, user_id, comment_text, comment_post_date 
+INSERT INTO comments (id, thread_id, user_id, comment_text, comment_post_date)
 VALUES FROM ();
 
 INSERT INTO topics (id, topic_name, decription_topic, user_id, topic_start_date)
