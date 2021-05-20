@@ -23,8 +23,8 @@ router.get('/', async (req, res) => {
     res.render('all', {forum});
 });
 
-router.get('/forum/:num', async (req, res) => {
-    return res.render('forum', forum[req.params.num - 1]);
+router.get('/forum/:id', async (req, res) => {
+    return res.render('forum', forum[req.params.id - 1]);
 });
 
 module.exports = router;
