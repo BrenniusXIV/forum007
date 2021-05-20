@@ -1,4 +1,4 @@
 module.exports = async function(req,res)
 {
-    res.send("get forums route");
+    res.send("get threads route");
 }

@@ -1,4 +1,4 @@
 module.exports = async function(req,res)
 {
-    res.send("create forum route");
+    res.send("create thread route");
 }
