@@ -17,6 +17,9 @@ const forum = [
         id: 4,
         thread_name: 'Programming',
     },
+    {
+        title: "SPECTRE"
+    }
 ];
 
 router.get('/', async (req, res) => {
