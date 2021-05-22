@@ -38,6 +38,10 @@ h1 {
         background-position: 0 100%;
     }
 }
+
+h1 p{
+    font-size: 2em;
+}
 /* .wrapper p {
     color: transparent;
 } */
