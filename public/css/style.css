@@ -4,7 +4,7 @@ header {
     border-bottom: 2px solid #065b83;
     justify-content: space-between;
     align-items: center;
-    
+    background-color: black;
 }
 header > img.animated-gif{
     width: 120px;
