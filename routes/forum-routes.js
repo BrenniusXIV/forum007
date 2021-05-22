@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     res.render('all', {forum});
 });
 
-router.get('/forum/:id', async (req, res) => {
+router.get('/views/forum.handlebars/:id', async (req, res) => {
     return res.render('forum', forum[req.params.id - 1]);
 });
 

@@ -1,12 +1,9 @@
-<div>
-    {{thread_name}}
-    <p>show me the forum.handlebars</p>
+{{#each forum}}
+<div class="container container-fluid mt-5">
+    <a href="/forum.handlebars/{{id}}">
+        <h4 class="title">
+            {{thread_name}}
+        </h4>
+    </a>
 </div>
-<div class="main">
-    <div class="header">
-    </div>
-    <textarea></textarea>
-    <button>add comment</button>
-    <div class="comments">
-    </div>
-</div>
+{{/each}}
