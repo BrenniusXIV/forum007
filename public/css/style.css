@@ -17,6 +17,13 @@ a:visited {
     text-decoration: none;
 }
 
+h1 {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: thin #060808;
+    -webkit-text-fill-color: aquamarine;
+}
+
+
 .no-button {
     background: none;
     border: none;
