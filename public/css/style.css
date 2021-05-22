@@ -7,6 +7,15 @@ header {
     
 }
 
+a:link {
+    color: #065b83;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #065b83;
+    text-decoration: none;
+}
 
 .no-button {
     background: none;
