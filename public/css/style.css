@@ -1,33 +1,18 @@
+header {
+    border-bottom: 2px solid #065b83;
+}
 
-body {
-    margin: 10px 60px;
-}
-a {
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #1b89bc;
     text-decoration: none;
-    color: salmon;
+    font-size: 100%;
 }
-h1, h4, ol {
-    margin: 0;
-}
-p {
-    margin: 5px 0;
-}
-.top-bar {
-    background-color: darksalmon;
-    padding: 0 40px;
-}
-.main {
-    background-color: darkgray;
-    padding: 15px 15px;
-}
-.row {
-    padding: 15px 0;
-}
-.bottom {
-    display: flex;
-    color: grey;
-    font-size: 12px;
-}
-.timestamp {
-    padding-right: 10px;
+
+.no-button:hover {
+    color: #065b83;
+    text-decoration: underline;
 }
