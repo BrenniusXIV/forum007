@@ -42,16 +42,16 @@ CREATE TABLE comments (
 );
 
 INSERT INTO users (id, name_firstlast, username, password_user, email, create_date)
-VALUES FROM ();
+VALUES ();
 
 INSERT INTO comments (id, thread_id, user_id, comment_text, comment_post_date)
-VALUES FROM ();
+VALUES ();
 
 INSERT INTO topics (id, topic_name, decription_topic, user_id, topic_start_date)
-VALUES FROM ();
+VALUES ();
 
 INSERT INTO threads (id, topic_id, user_id, thread_title, thread_description, thread_start_date)
-VALUES FROM ();
+VALUES ());
 
 
 
