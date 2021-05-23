@@ -25,7 +25,6 @@ table thread {
 
 table comments_section {
   id int pk 
-  likes_score int
   thread_id int [ref: - thread.id] //one-to-one
   created_at timestamp [default: `now()`]
   }
@@ -36,5 +35,5 @@ table comment {
   commenter_id int [ref: - user.id] //one-to-one
   comments_section_id int [ref: > comments_section.id]
   likes_score int
+  created_at timestamp [default: `now()`]
 }
-
