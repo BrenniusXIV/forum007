@@ -1,4 +1,4 @@
-table users {
+table user {
   id int [pk, not null, increment, unique]
   user_name varchar [not null, unique]
   email varchar [not null]
@@ -7,31 +7,34 @@ table users {
   user_likes varchar
 }
 
-table boards {
+table board {
   id int [pk, not null, increment, unique]
   name varchar [note: 'the name of the board']
   created_at timestamp [default: `now()`]
-  threads_id int
 }
 
-table threads {
+table thread {
   id int [pk, not null, increment, unique]
-  threads_name varchar [not null]
+  thread_name varchar [not null]
   body varchar
-  board_id int [ref: > boards.id, not null] //many-to-one
-  user_id int [ref: > users.id] //many-to-one
+  board_id int [ref: > board.id, not null] //many-to-one
+  user_id int [ref: > user.id] //many-to-one
   created_at timestamp [default: `now()`]
-  comments_id int
+  comments_section_id int
 }
 
-table comments {
+table comments_section {
   id int pk 
-  comment_text varchar
   likes_score int
-  threads_id int [ref: > threads.id] //many-to-one
-  user_id int [ref: > users.id] //many-to-one
+  thread_id int [ref: - thread.id] //one-to-one
   created_at timestamp [default: `now()`]
   }
 
-
+table comment {
+  id int [pk, not null, increment, unique]
+  body varchar
+  commenter_id int [ref: - user.id] //one-to-one
+  comments_section_id int [ref: > comments_section.id]
+  likes_score int
+}
 
