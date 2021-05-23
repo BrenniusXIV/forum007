@@ -1,9 +1,8 @@
 {{#each forum}}
-<div class="container container-fluid mt-5">
-    <a href="/forum.handlebars/{{id}}">
-        <h4 class="title">
-            {{thread_name}}
-        </h4>
-    </a>
+<div class="thread-preview">
+    <div class="thread">
+        <h4>{{thread_name}}</h4></br>
+        <p>Thread description</p>
+    </div>
 </div>
 {{/each}}

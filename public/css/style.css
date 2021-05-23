@@ -64,3 +64,13 @@ h1 p{
     color: #065b83;
     text-decoration: underline;
 }
+
+.thread-preview {
+    display: flex;
+    width: 650px;
+    flex-flow: column;
+    justify-content: space-around;
+    margin: 5px;
+    border-radius: 10px;
+    border: 3px solid salmon;
+}
