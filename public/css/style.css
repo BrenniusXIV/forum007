@@ -1,9 +1,24 @@
+body {
+    background-size: cover;
+    margin: 10px 60px;
+    background-color: darkgray ;
+    /* background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif'); */
+}
+
+
+
+
+
+
+
+
 header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    /* background-color: #060808; */
+    background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif');
     padding-right: 70px;
     padding-left: 30px;
 }
