@@ -1,5 +1,5 @@
 html {
-    background:url(../images/treesbackground.jpg);
+    background:url(../images/vaporgifa.gif);
 	background-size:cover;
 	width:100%;
 	height:650px;
@@ -28,6 +28,7 @@ header {
     justify-content: space-between;
     align-items: center;
     /* background-color: #060808; */
+    background-size:cover;
     background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif');
     padding-right: 70px;
     padding-left: 30px;
