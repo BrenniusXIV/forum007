@@ -8,27 +8,11 @@ body {
     
     /* background-size: cover;
     margin: 10px 60px;
-<<<<<<< HEAD
     background-color: black ;
     background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif');
+    */
 }
 
-=======
-    background-color: darkgray ; */
-
-/* background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif'); */
-/* margin:0;
-	padding:0; */
-}
-
-
-
-
-
-
-
-/* this is orinal code below*/
->>>>>>> 474d5586b455365f163f2fdcbfe3255f582ef60b
 header {
     display: flex;
     flex-flow: row wrap;
