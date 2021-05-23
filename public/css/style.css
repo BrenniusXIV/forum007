@@ -1,17 +1,17 @@
-body {
-    background:url(../images/treesbackground.jpg);
+/* body {
+     background:url(../images/treesbackground.jpg);
 	background-size:cover;
 	width:100%;
 	height:650px;
 	position:relative;
 	overflow:hidden;
-    
-    /* background-size: cover;
+     
+     background-size: cover;
     margin: 10px 60px;
     background-color: black ;
     background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif');
-    */
-}
+    
+} */
 
 header {
     display: flex;
@@ -109,7 +109,6 @@ h1 p{
  
 .section
 {
-	
 	background:url(../images/treesbackground.jpg);
 	background-size:cover;
 	width:100%;
@@ -123,25 +122,21 @@ h1 p{
 {
 	background:url(../images/snow.png);
 	background-repeat:repeat;
-   
 	width:100%;
-	height:100%;
+	height:650px;
 	position:fixed;
 	top:0;
 	left:0;
 	animation:animateOne 10s infinite linear;
-    z-index:1000;
 
 } 
 
 .snow2
 {
-	background:url(../images/snow.png);
+	background:url(snow.png);
 	background-repeat:repeat;
-    
 	width:100%;
-	height:100%;
-    position:fixed;
+	height:650px;
 	position:absolute;
 	top:0;
 	left:0;
@@ -176,4 +171,4 @@ h1 p{
 	{
 		background-position: 0px 650px
 	}
-} 
+}
