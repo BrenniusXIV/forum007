@@ -1,37 +1,37 @@
 table users {
-  id int pk
-  user_name varchar
-  email varchar
-  created_at varchar
+  id int [pk, not null, increment, unique]
+  user_name varchar [not null, unique]
+  email varchar [not null]
+  password varchar [not null]
+  created_at timestamp [default: `now()`]
   user_likes varchar
 }
 
-table topics {
-  id int pk
-  user_id int
-  type varchar
-  created_at varchar
+table boards {
+  id int [pk, not null, increment, unique]
+  name varchar [note: 'the name of the board']
+  created_at timestamp [default: `now()`]
   threads_id int
 }
 
 table threads {
-id int pk
-threads_name varchar
-topics_id int
-type varchar
-comments_id int
+  id int [pk, not null, increment, unique]
+  threads_name varchar [not null]
+  body varchar
+  board_id int [ref: > boards.id, not null] //many-to-one
+  user_id int [ref: > users.id] //many-to-one
+  created_at timestamp [default: `now()`]
+  comments_id int
 }
 
 table comments {
   id int pk 
   comment_text varchar
   likes_score int
-  threads_id int
+  threads_id int [ref: > threads.id] //many-to-one
+  user_id int [ref: > users.id] //many-to-one
+  created_at timestamp [default: `now()`]
   }
 
-ref {
-  threads.topics_id > topics.id
-}
-ref {
-  comments.threads_id > threads.id
-}
+
+
