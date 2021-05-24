@@ -1,17 +1,17 @@
 {
-  "name": "forum",
+  "name": "forum007",
   "version": "1.0.0",
-  "description": "forum 007 threads",
+  "description": "project 2 deliverable",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node -r dotenv/config server.js dotenv_config_path=config.env"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrenniusXIV/forum007.git"
   },
-  "author": "",
+  "author": "Lane Pemberton;Brent\u001b[D\u001b[D\u001b\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrenniusXIV/forum007/issues"
@@ -19,9 +19,11 @@
   "homepage": "https://github.com/BrenniusXIV/forum007#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   }

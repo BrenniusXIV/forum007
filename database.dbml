@@ -1,0 +1,39 @@
+table user {
+  id int [pk, not null, increment, unique]
+  user_name varchar [not null, unique]
+  email varchar [not null]
+  password varchar [not null]
+  created_at timestamp [default: `now()`]
+  user_likes varchar
+}
+
+table board {
+  id int [pk, not null, increment, unique]
+  name varchar [note: 'the name of the board']
+  created_at timestamp [default: `now()`]
+}
+
+table thread {
+  id int [pk, not null, increment, unique]
+  thread_name varchar [not null]
+  body varchar
+  board_id int [ref: > board.id, not null] //many-to-one
+  user_id int [ref: > user.id] //many-to-one
+  created_at timestamp [default: `now()`]
+  comments_section_id int
+}
+
+table comments_section {
+  id int pk 
+  thread_id int [ref: - thread.id] //one-to-one
+  created_at timestamp [default: `now()`]
+  }
+
+table comment {
+  id int [pk, not null, increment, unique]
+  body varchar
+  commenter_id int [ref: - user.id] //one-to-one
+  comments_section_id int [ref: > comments_section.id]
+  likes_score int
+  created_at timestamp [default: `now()`]
+}
