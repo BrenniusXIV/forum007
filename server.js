@@ -42,6 +42,7 @@ app.set("view engine", "handlebars");
 //connect routes to app
 app.use(routes);  //sometimes i'll call "/routes" -> "/apis" 
 //setup port to listen on
+
 sequelize.sync({ force: false }).then(() => {
     app.listen(port, () => console.log(`App listening on PORT ${port}`));
 })

@@ -1,5 +1,5 @@
 //import models
-const Board = require('./boards');
+const Board = require('./Board');
 const Thread = require('./Thread');
 const CommentSection = require('./CommentSection');
 const Comment = require('./Comment');

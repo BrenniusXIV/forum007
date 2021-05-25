@@ -5,7 +5,10 @@ module.exports = async function(req,res)
     try
     {
         const threadResults = await Thread.create({
-            ...req.body
+            ...req.body,
+            user_id: 1,
+            comments_section_id: 1,
+            board_id: 1,
         });
         //return thread results
         res.status(200).json(threadResults);
