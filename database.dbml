@@ -20,10 +20,10 @@ table thread {
   board_id int [ref: > board.id, not null] //many-to-one
   user_id int [ref: > user.id] //many-to-one
   created_at timestamp [default: `now()`]
-  comments_section_id int
+  comment_section_id int
 }
 
-table comments_section {
+table comment_section {
   id int pk 
   thread_id int [ref: - thread.id] //one-to-one
   created_at timestamp [default: `now()`]
@@ -33,7 +33,7 @@ table comment {
   id int [pk, not null, increment, unique]
   body varchar
   commenter_id int [ref: - user.id] //one-to-one
-  comments_section_id int [ref: > comments_section.id]
+  comment_section_id int [ref: > comment_section.id]
   likes_score int
   created_at timestamp [default: `now()`]
 }

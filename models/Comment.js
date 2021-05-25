@@ -22,10 +22,10 @@ Comment.init(
                 key: "id",
             },
         },
-        comments_section_id: {
+        comment_section_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "comments_section",
+                model: "comment_section",
                 key: "id",
             },
         },

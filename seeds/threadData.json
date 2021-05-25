@@ -3,24 +3,24 @@
         "thread_name": "How did we get here",
         "body": "stuff is here",
         "board_id": 1,
-        "comments_section_id": 4
+        "comment_section_id": 4
     },
     {
         "thread_name": "new thread hi",
         "body": "stuff is here too",
         "board_id": 2,
-        "comments_section_id": 55
+        "comment_section_id": 55
     },
     {
         "thread_name": "oh no",
         "body": "stuff is here again",
         "board_id": 1,
-        "comments_section_id": 2
+        "comment_section_id": 2
     },
     {
         "thread_name": "whoops",
         "body": "more text",
         "board_id": 3,
-        "comments_section_id": 3
+        "comment_section_id": 3
     }
 ]

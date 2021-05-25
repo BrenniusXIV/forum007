@@ -7,7 +7,7 @@ module.exports = async function(req,res)
         const threadResults = await Thread.create({
             ...req.body,
             user_id: 1,
-            comments_section_id: 1,
+            comment_section_id: 1,
             board_id: 1,
         });
         //return thread results
