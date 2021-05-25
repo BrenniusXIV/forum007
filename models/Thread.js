@@ -37,13 +37,6 @@ Thread.init(
         key: "id",
       },
     },
-    comments_section_id: {   //one thread to one comment section; many comments to one comments section
-      type: DataTypes.INTEGER,
-      references: {
-        model: "comment_section",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,

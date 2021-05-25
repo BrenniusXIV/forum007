@@ -21,13 +21,6 @@ Board.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
-    threads_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "thread",
-          key: "id",
-        },
-    },   
 },
 {
     sequelize,
