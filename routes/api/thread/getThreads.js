@@ -4,14 +4,8 @@ module.exports = async function(req,res)
     const {Thread} = require('../../../models');
     try
     {
-        const threadResults = await Thread.findAll({
-            where: {
-                ...req.body,
-                user_id: 1,
-                comment_section_id: 1,
-                board_id: 1,
-            },
-        });
+        const threadResults = await Thread.findAll();
+      
         //return thread results
         res.status(200).json(threadResults);
     } catch (error) {
