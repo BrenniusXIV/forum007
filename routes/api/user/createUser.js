@@ -2,16 +2,18 @@ module.exports = async function(req,res)
 {
     //import models folder
     const {User} = require('../../../models');
+    //wrap dangerous code in try/catch
     try
     {
-        console.log("creating user!!");
+        //create user
         const userResults = await User.create({
             ...req.body,
         });
-        //return thread results
+        //return user results
         res.status(200).json(userResults);
-    } catch (error) {
-        console.log(error);
+    } catch (error)
+    {
+        //return error
         res.status(500).json({"error":error});
     }
 };
