@@ -1,4 +1,4 @@
 module.exports = async function(req,res)
 {
-    res.send("update thread route");
+    res.send("update comment route");
 }
