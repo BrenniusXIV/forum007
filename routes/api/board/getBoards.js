@@ -13,5 +13,4 @@ module.exports = async function(_req,res)
       console.log(error);
       res.status(500).json({"error,EEK!":error});
     }
-}
-  module.exports = router;
+};
