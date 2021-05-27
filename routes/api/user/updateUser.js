@@ -11,6 +11,7 @@ module.exports = async function(req,res)
             ...req.body,
         },
         { 
+            individualHooks: true,
             where: { id: req.params.id }    //get user id from params
         });
         //return user results

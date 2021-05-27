@@ -8,6 +8,9 @@ module.exports = async function(req,res)
         //create user
         const userResults = await User.create({
             ...req.body,
+        },
+        {
+            individualHooks: true,
         });
         //return user results
         res.status(200).json(userResults);
