@@ -5,13 +5,8 @@ module.exports = async function(req,res)
     //wrap dangerous code in try/catch
     try
     {
-        //create user
-        const userResults = await User.create({
-            ...req.body,
-        },
-        {
-            individualHooks: true,
-        });
+        //get users
+        const userResults = await User.findAll();
         //return user results
         res.status(200).json(userResults);
     } catch (error)

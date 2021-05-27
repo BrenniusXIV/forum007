@@ -44,6 +44,12 @@ User.hasMany(Comment, {
     onDelete: 'CASCADE'
 });
 
+//user has many threads
+User.hasMany(Thread, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
 //comments are children of user
 Comment.belongsTo(User, {
     foreignKey: 'commenter_id'
