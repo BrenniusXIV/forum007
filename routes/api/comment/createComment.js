@@ -1,19 +1,18 @@
 module.exports = async function(req,res)
 {
     //import models folder
-    const {Thread} = require('../../../models');
+    const {Comment} = require('../../../models/Comment');
     try
     {
-        const threadResults = await Thread.create({
+        const commentPost = await Comment.create({
             ...req.body,
-            user_id: 1,
-            comment_section_id: 1,
-            board_id: 1,
+            // comment_section_id: 1,
         });
         //return thread results
-        res.status(200).json(threadResults);
+        res.send('Hello Chandler');
+        res.status(200).json(commentPost);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).json({"error":error});
     }
 
