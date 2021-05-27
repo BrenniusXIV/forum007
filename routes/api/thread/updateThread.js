@@ -3,7 +3,8 @@ module.exports = async function(req,res)
     const {Thread} = require('../../../models');
     try
     { 
-        const threadResults =await Thread.update(
+        const threadResults = await Thread.update(
+            {
             ...req.body,
         },
         {

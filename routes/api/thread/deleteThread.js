@@ -4,11 +4,9 @@ module.exports = async function(req,res)
 {
     const { Thread } = require("../../../models");
     try {
-    const threadResults = await Thread.destroy({
-        where: {
-            ...req.body,
-            
-        },
+    const threadResults = await Thread.destroy(
+      {
+        where: { id: req.params.id }
       });
   
       if (!threadResults) {
