@@ -1,7 +1,7 @@
 module.exports = async function(req,res)
 {
     //import models folder
-    const {Comment} = require('../../../models/Comment');
+    const {Comment} = require('../../../models');
     try
     {
         const commentPost = await Comment.create({
@@ -9,7 +9,6 @@ module.exports = async function(req,res)
             // comment_section_id: 1,
         });
         //return thread results
-        res.send('Hello Chandler');
         res.status(200).json(commentPost);
     } catch (error) {
         // console.log(error);
