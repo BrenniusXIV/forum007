@@ -1,18 +1,14 @@
-module.exports = async function(_req,res)
+module.exports = async function(req,res)
  {
     const {Board} = require('../../../models');
 
     try
     {
-        //delete board
+        
   //update user
-  const userResults = await Board.update(
+  const boardResults = await Board.update(
     {
         ...req.body,
-        // user_id: 1,
-        // threads_id: 1,
-        // comments_id: 1,
-        // comments_section_id: 1,
     },
     { 
          where: { 

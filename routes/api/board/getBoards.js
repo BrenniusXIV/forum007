@@ -5,7 +5,7 @@ module.exports = async function(_req,res)
     try
     {
         //delete board
-      const boardResults = await Board.FindAll();
+      const boardResults = await Board.findAll();
         
       //return board status/error
       res.status(200).json(boardResults);
