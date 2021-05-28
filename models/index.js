@@ -1,7 +1,6 @@
 //import models
 const Board = require('./Board');
 const Thread = require('./Thread');
-const CommentSection = require('./CommentSection');
 const Comment = require('./Comment');
 const User = require('./User');
 
@@ -16,27 +15,16 @@ Thread.belongsTo(Board, {
     foreignKey: 'board_id',
 });
 
-//thread has many comment sections
-Thread.hasOne(CommentSection, {
+//thread has many comments
+Thread.hasMany(Comment, {
     foreignKey: 'thread_id',
     onDelete: 'CASCADE'
 });
 
-//comment sections are children of thread
-CommentSection.belongsTo(Thread, {
+//comments are children of thread
+Comment.belongsTo(Thread, {
     foreignKey:'thread_id'
 })
-
-//comment section has many comments
-CommentSection.hasMany(Comment, {
-    foreignKey: 'comment_section_id',
-    onDelete:'CASCADE'
-});
-
-//comments are children of comment section
-Comment.belongsTo(CommentSection, {
-    foreignKey: 'comment_section_id'
-});
 
 //user has many comments
 User.hasMany(Comment, {
@@ -57,4 +45,4 @@ Comment.belongsTo(User, {
 
 
 
-module.exports = { Board, Thread, CommentSection, Comment, User };
+module.exports = { Board, Thread, Comment, User };
