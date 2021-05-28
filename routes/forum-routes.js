@@ -26,6 +26,10 @@ router.get('/', async (req, res) => {
     res.render('all', {forum});
 });
 
+router.get('/login', async (req, res) => {
+    res.render('login', {forum});
+});
+
 router.get('/views/forum.handlebars/:id', async (req, res) => {
     return res.render('forum', forum[req.params.id - 1]);
 });
