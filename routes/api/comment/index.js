@@ -7,6 +7,7 @@ const updateComment = require('./updateComment');
 const deleteComment = require('./deleteComment');
 //connect the js files to the route
 router.get("/comment",getComments);
+router.get("/comment/:id", getCommentById);
 router.post("/comment",createComment);
 router.put("/comment/:id",updateComment);
 router.delete("/comment/:id",deleteComment);
