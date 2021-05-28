@@ -7,6 +7,7 @@ const updateUser = require('./updateUser');
 const deleteUser = require('./deleteUser');
 //connect the js files to the route
 router.get("/user",getUsers);
+router.get("/user/:id", getUserById);
 router.post("/user",createUser);
 router.put("/user/:id",updateUser);
 router.delete("/user/:id",deleteUser);

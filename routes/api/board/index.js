@@ -7,6 +7,7 @@ const updateBoard = require('./updateBoard');
 const deleteBoard = require('./deleteBoard');
 //connect the js files to the route
 router.get("/board",getBoards);
+router.get("/board/:id", getBoardById);
 router.post("/board",createBoard);
 router.put("/board/:id",updateBoard);
 router.delete("/board/:id",deleteBoard);
