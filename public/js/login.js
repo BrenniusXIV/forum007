@@ -1,18 +1,18 @@
-//get login button
-let loginButton = $('login-button');
+// //get login button
+// let loginButton = $('login-button');
 
-//send data to login route
-async function postData()
-{
-    //
-}
+// //send data to login route
+// async function postData()
+// {
+//     //
+// }
 
-//initiate login fetch
-async function onLoginButton()
-{
-    let loginResults = await postData();
-    
-}
+// //initiate login fetch
+// async function onLoginButton()
+// {
+//     let loginResults = await postData();
 
-//assign function to login button
-loginButton.click(onLoginButton);
+// }
+
+// //assign function to login button
+// loginButton.click(onLoginButton);
