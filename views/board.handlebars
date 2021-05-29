@@ -1,0 +1,15 @@
+<div class='threads-list'>
+    {{#each thread}}
+    <div class='thread-entry'>
+        <div class='thread-name'>
+            {{thread_name}}
+        </div>
+        <div class='thread-creator'>
+            Created by: {{user_id}}
+        </div>
+        <div class='thread-created-date'>
+            Date created: {{date_created}}
+        </div>
+    </div>
+    {{/each}}
+</div>
