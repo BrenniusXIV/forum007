@@ -30,15 +30,12 @@ router.get("/board/:id", async (req, res) => {
   try {
     const threadsResult = await Thread.findAll({
       where: {board_id: req.params.id},
-      include: [
-        {
-          model: User,
-          model: Comment,
-        },
-      ],
     });
-    const board = threadsResult.get({ plain: true });
-    res.render("board", ...board);
+    const threads = threadsResult.map((thread) => thread.get({plain:true}));
+    res.render("board", {
+      threads,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json({ err: err });
   }
