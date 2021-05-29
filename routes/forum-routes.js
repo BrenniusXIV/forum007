@@ -33,18 +33,26 @@ router.get('/login', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
     //get user data from session
-    const userData = await User.findOne({
-        where: {
-            id: req.session.user_id
+    try {
+        if (req.session.logged_in === true) {
+            const userData = await User.findOne({
+                where: {
+                    id: req.session.user_id
+                }
+            });
+            //serialize user data
+            const user = userData.get({plain:true});
+            //pass user to profile
+            res.render('profile', {
+                ...user,
+                logged_in:true
+            });
+        } else {
+            res.send(`You must be logged in to view your profile.`)
         }
-    });
-    //serialize user data
-    const user = userData.get({plain:true});
-    //pass user to profile
-    res.render('profile', {
-        ...user,
-        logged_in:true
-    });
+    } catch (err) {
+        res.status(500).json({"error": err})
+    }
 });
 
 router.get('/views/forum.handlebars/:id', async (req, res) => {
