@@ -1,4 +1,4 @@
-//send data to login route
+//send data to user route
 async function postData(data)
 {
     let fetchResult = await fetch('/api/user', {
@@ -11,7 +11,7 @@ async function postData(data)
     return fetchResult;
 }
 
-//initiate login fetch
+//initiate create user fetch
 async function onCreateUser(event)
 {
     event.preventDefault();
