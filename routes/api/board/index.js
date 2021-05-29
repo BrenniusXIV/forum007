@@ -2,6 +2,7 @@
 const router = require('express').Router();
 //import js files performing the work on the route
 const getBoards = require('./getBoards');
+const getBoardById = require('./boardById');
 const createBoard = require('./createBoard');
 const updateBoard = require('./updateBoard');
 const deleteBoard = require('./deleteBoard');

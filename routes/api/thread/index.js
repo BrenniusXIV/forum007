@@ -2,6 +2,7 @@
 const router = require('express').Router();
 //import js files performing the work on the route
 const getThreads = require('./getThreads');
+const getThreadById = require('./threadById');
 const createThread = require('./createThread');
 const updateThread = require('./updateThread');
 const deleteThread = require('./deleteThread');

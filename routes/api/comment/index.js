@@ -2,6 +2,7 @@
 const router = require('express').Router();
 //import js files performing the work on the route
 const getComments = require('./getComments');
+const getCommentById = require('./commentById');
 const createComment = require('./createComment');
 const updateComment = require('./updateComment');
 const deleteComment = require('./deleteComment');

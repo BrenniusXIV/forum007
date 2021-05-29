@@ -2,6 +2,7 @@
 const router = require('express').Router();
 //import js files performing the work on the route
 const getUsers = require('./getUsers');
+const getUserById = require('./userById');
 const createUser = require('./createUser');
 const updateUser = require('./updateUser');
 const deleteUser = require('./deleteUser');

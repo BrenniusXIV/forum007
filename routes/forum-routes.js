@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Board, Thread } = require("../models");
+const { Board, Thread, Comment, User } = require("../models");
 const forum = [
   {
     id: 1,
@@ -28,14 +28,16 @@ router.get("/", async (req, res) => {
 
 router.get("/board/:id", async (req, res) => {
   try {
-    const boardResult = await Board.findByPk(req.params.id, {
+    const threadsResult = await Thread.findAll({
+      where: {board_id: req.params.id},
       include: [
         {
-          model: Thread,
+          model: User,
+          model: Comment,
         },
       ],
     });
-    const board = boardResult.get({ plain: true });
+    const board = threadsResult.get({ plain: true });
     res.render("board", ...board);
   } catch (err) {
     res.status(500).json({ err: err });
