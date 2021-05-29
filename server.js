@@ -30,6 +30,10 @@ const sess = {
 app.use(session(sess));
 
 
+//using handlebars css
+app.use(express.static('public'));
+
+
 //set up the express app to handle incoming data payload
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

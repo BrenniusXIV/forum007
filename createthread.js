@@ -16,7 +16,8 @@ const createThread = (ev)=>{
     //for display purposes only
     console.warn('added' , {threads} );
     let pre = document.querySelector('#msg pre');
-    pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
+    // pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
+    localStorage.setItem('threadList', JSON.stringify(threads) );
 
     //saving to localStorage
     localStorage.setItem('threadList', JSON.stringify(threads) );
