@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const {User} = require('../models');
 
 const forum = [
     {
@@ -28,6 +29,22 @@ router.get('/', async (req, res) => {
 
 router.get('/login', async (req, res) => {
     res.render('login', {forum});
+});
+
+router.get('/profile', async (req, res) => {
+    //get user data from session
+    const userData = await User.findOne({
+        where: {
+            id: req.session.user_id
+        }
+    });
+    //serialize user data
+    const user = userData.get({plain:true});
+    //pass user to profile
+    res.render('profile', {
+        ...user,
+        logged_in:true
+    });
 });
 
 router.get('/views/forum.handlebars/:id', async (req, res) => {
