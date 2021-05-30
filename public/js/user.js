@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //send data to login route
+=======
+//send data to user route
+>>>>>>> 4b49737ade8b25c4c68e3e4055edd1c03e12cb3f
 async function postData(data)
 {
     let fetchResult = await fetch('/api/user', {
@@ -11,7 +15,11 @@ async function postData(data)
     return fetchResult;
 }
 
+<<<<<<< HEAD
 //initiate login fetch
+=======
+//initiate create user fetch
+>>>>>>> 4b49737ade8b25c4c68e3e4055edd1c03e12cb3f
 async function onCreateUser(event)
 {
     event.preventDefault();

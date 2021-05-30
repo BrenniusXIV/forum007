@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Thread, Comment, CommentSection, Board } = require('../models');
+const { User, Thread, Comment, Board } = require('../models');
 
 const userData = require('./userData.json');
 const boardData = require('./boardData.json');
@@ -20,26 +20,18 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  let commentSectionId = 1
-  let commentId = 1
   let threadId = 1
   for (const thread of threadData) {
     thread.id = threadId++
-    const commentSection = {
-      id: commentSectionId,
-      thread_id: thread.id
-    }
     await Thread.bulkCreate([{
       ...thread,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     }]);
-    await CommentSection.bulkCreate([commentSection])
     await Comment.bulkCreate(commentData.map(comment => ({
       ...comment,
-      comment_section_id: commentSection.id,
+      thread_id: thread.id,
       commenter_id: users[Math.floor(Math.random() * users.length)].id,
     })))
-    commentSectionId++
   }
 
   process.exit(0);

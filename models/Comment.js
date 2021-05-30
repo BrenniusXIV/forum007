@@ -22,10 +22,10 @@ Comment.init(
                 key: "id",
             },
         },
-        comment_section_id: {
+        thread_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "comment_section",
+                model: "thread",
                 key: "id",
             },
         },
