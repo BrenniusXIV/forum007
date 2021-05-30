@@ -38,6 +38,8 @@ router.get("/board/:id", async (req, res) => {
   }
 });
 
-
+router.get("/thread/:id", async (req, res) => {
+  res.send(`You hit /thread/${req.params.id}.`)
+})
 
 module.exports = router;

@@ -1,14 +1,14 @@
 <div class='threads-list'>
     {{#each threads as |thread|}}
-    <div class='thread-entry'>
+    <div class='thread-preview'>
         <div class='thread-name'>
-            {{thread_name}}
+            <h1>{{thread_name}}</h1>
         </div>
         <div class='thread-creator'>
-            Created by: {{user.user_name}}
+            <h3>Created by: {{user.user_name}}</h3>
         </div>
         <div class='thread-created-date'>
-            Date created: {{date_created}}
+            <p>Date created:</br>{{date_created}}</p>
         </div>
     </div>
     {{/each}}

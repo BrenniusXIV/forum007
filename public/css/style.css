@@ -112,6 +112,15 @@ h1 p{
     text-align: center;
     background-image: url(../images/threabox.jpg);
 }
+.thread-creator > h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.thread-created-date > p {
+  text-align: left;
+  padding-left: 20px;
+}
 
 /* style for createthreads page */
 #thread-content {
