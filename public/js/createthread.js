@@ -19,10 +19,15 @@ async function postData(data)
 
 const createThread = async (ev)=>{
     ev.preventDefault();  //to stop the form submitting
+    let dropdownlist = document.getElementById("ddlViewBy")
+    console.log(dropdownlist)
+    var text= dropdownlist.options[dropdownlist.selectedIndex].text;
+    console.log(text)
     let thread = {
         // id: Date.now(),
         thread_name: document.getElementById('thread-title').value,
         body: document.getElementById('thread-content').value,
+        board_id: text
         // board_id: //await grabbing board where: {name: name}
     }
     // threads.push(thread);

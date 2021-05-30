@@ -1,19 +1,30 @@
-  <body>
-    {{!-- <link rel="stylesheet" href="createthread.css"> --}}
+<body id="bodyid">
     <section class="center">
       <a href="index.html">
-      <IMG class="animated-gif" SRC="photos\spalpha1.1.gif">
+      <IMG id="imgid" class="animated-gif" SRC="photos\spalpha1.1.gif">
       </a>
-      <h3 class="center title">Create New Thread Post</h3><hr>
+
+      <h3 id="createh3" class="center title">Create New Thread Post</h3><hr>
+
+     
+      
     
-      <form class="main">
+      <form id="ctmain" class="main">
+        <label id="titlelabel" for="thread-title">Boards</label>
+        <select id="ddlViewBy">
+          <option value="1">Gaming</option>
+          <option value="2" selected="selected">Cryptocurrency</option>
+          <option value="3">Programming</option>
+          <option value="4">General</option>
+        </select>
+
         <div class="center">
-          <label for="thread-title">Title:</label>
+          <label id="titlelabel" for="thread-title">Title:</label>
           <input class="input" type="text" id="thread-title" name="thread-title" placeholder="thread title here"/>
         </div>
         <div class="center">
-          <label for="thread-content">Content:</label>
-          <textarea type="text" class="textarea is-large" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
+          <label id="label" for="thread-content">Content:</label>
+          <textarea  type="text" class="textarea is-large" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
         </div>
         <button id="btn"  class="createbtn">Create Thread</button>
         <div id="msg">
@@ -23,7 +34,6 @@
     </section>
 
     
-     <script src="js/createthread.js" async defer></script>
+     <script src="createthread.js" async defer></script>
    
   </body>
-  
