@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-// //get login button
-// let loginButton = $('login-button');
-
-// //send data to login route
-// async function postData()
-// {
-//     //
-// }
-
-// //initiate login fetch
-// async function onLoginButton()
-// {
-//     let loginResults = await postData();
-
-// }
-
-// //assign function to login button
-// loginButton.click(onLoginButton);
-=======
 //send data to login route
 async function postLoginData(data)
 {
@@ -51,4 +31,4 @@ async function onLogin(event)
 document
   .querySelector('.login-form')
   .addEventListener('submit', onLogin);
->>>>>>> 4b49737ade8b25c4c68e3e4055edd1c03e12cb3f
+
