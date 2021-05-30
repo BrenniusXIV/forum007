@@ -45,4 +45,8 @@ router.get("/views/forum.handlebars/:id", async (req, res) => {
   return res.render("forum", forum[req.params.id - 1]);
 });
 
+router.get('/createthread', async (req, res) => {
+  res.render('createthread');
+})
+
 module.exports = router;

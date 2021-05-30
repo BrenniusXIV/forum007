@@ -6,7 +6,7 @@ module.exports = async function(req,res)
     {
         const threadResults = await Thread.create({
             ...req.body,
-           
+            user_id: req.session.user_id
         });
         //return thread results
         res.status(200).json(threadResults);

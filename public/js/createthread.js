@@ -15,30 +15,31 @@ async function postData(data)
 
 
 //getting data from creating thread
-let threads = [];
+// let threads = [];
 
-const createThread = (ev)=>{
+const createThread = async (ev)=>{
     ev.preventDefault();  //to stop the form submitting
     let thread = {
-        id: Date.now(),
-        title: document.getElementById('thread-title').value,
-        content: document.getElementById('thread-content').value
+        // id: Date.now(),
+        thread_name: document.getElementById('thread-title').value,
+        body: document.getElementById('thread-content').value,
+        // board_id: //await grabbing board where: {name: name}
     }
-    threads.push(thread);
+    // threads.push(thread);
     document.forms[0].reset(); // to clear the form for the next entries
     //document.querySelector('form').reset();
 
     //for display purposes only
-    console.warn('added' , {threads} );
+    console.warn('added' , {thread} );
     let pre = document.querySelector('#msg pre');
     // pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
     pre.textContent = "Thread Created";
     //saving to localStorage
-    localStorage.setItem('threadList', JSON.stringify(threads) );
+    localStorage.setItem('threadList', JSON.stringify(thread) );
+    let threadResults = await postData(thread);
 }
 // document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', createThread);
+document.getElementById('btn').addEventListener('click', createThread);
 
-    let threadResults = await postData(thread);
 
 
