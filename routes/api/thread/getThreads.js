@@ -2,6 +2,7 @@ module.exports = async function(req,res)
 {
 
     const {Thread} = require('../../../models');
+    console.log('import thread')
     try
     {
         const threadResults = await Thread.findAll();

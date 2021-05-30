@@ -1,4 +1,20 @@
 
+
+//send data to thread route
+async function postData(data)
+{
+    let fetchResult = await fetch('/api/thread', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return fetchResult;
+}
+
+
+//getting data from creating thread
 let threads = [];
 
 const createThread = (ev)=>{
@@ -23,6 +39,6 @@ const createThread = (ev)=>{
 // document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', createThread);
 
-
+    let threadResults = await postData(thread);
 
 
