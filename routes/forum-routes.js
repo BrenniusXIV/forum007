@@ -43,7 +43,30 @@ router.get("/board/:id", async (req, res) => {
 });
 
 router.get("/thread/:id", async (req, res) => {
-  res.send(`You hit /thread/${req.params.id}.`)
+  const threadData = await Thread.findByPk(req.params.id, 
+    {
+      include: [
+        {
+          model: User,
+        },
+      ]
+    });
+  const commentData = await Comment.findAll({
+    where: {thread_id: req.params.id},
+    include: [
+      {
+        model: User,
+        attributes: ['user_name']
+      },
+    ]
+  })
+  const comments = commentData.map((comment) => comment.get({plain: true}));
+  const thread = threadData.get({plain: true});
+  res.render('thread', {
+    thread,
+    comments,
+    logged_in: req.session.logged_in
+  })
 })
 
 module.exports = router;
