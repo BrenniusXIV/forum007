@@ -27,7 +27,7 @@ async function onLogin(event)
         document.location.replace('/profile');
     }
 }
-
 document
   .querySelector('.login-form')
   .addEventListener('submit', onLogin);
+

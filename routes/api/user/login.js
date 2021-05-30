@@ -2,7 +2,6 @@ module.exports = async function(req, res)
 
 {
     const {User} = require('../../../models');
-    console.log('import user');
     try
     {
         
@@ -16,7 +15,6 @@ module.exports = async function(req, res)
             return;
         }
         
-        console.log(req.body.password);
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
@@ -33,7 +31,6 @@ module.exports = async function(req, res)
             });
             return;
         }
-
 
     } catch (error) {
         res.status(400).json(err);
