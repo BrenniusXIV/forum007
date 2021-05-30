@@ -31,8 +31,6 @@ router.get('/login', async (req, res) => {
     res.render('login', {forum});
 });
 
-<<<<<<< HEAD
-=======
 router.get('/profile', async (req, res) => {
     //get user data from session
     try {
@@ -57,7 +55,6 @@ router.get('/profile', async (req, res) => {
     }
 });
 
->>>>>>> 4b49737ade8b25c4c68e3e4055edd1c03e12cb3f
 router.get('/views/forum.handlebars/:id', async (req, res) => {
     return res.render('forum', forum[req.params.id - 1]);
 });
