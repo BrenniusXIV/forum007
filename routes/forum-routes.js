@@ -20,6 +20,12 @@ router.get("/board/:id", async (req, res) => {
   try {
     const threadsResult = await Thread.findAll({
       where: {board_id: req.params.id},
+      include: [
+        {
+          model: User,
+          attributes: ['user_name'],
+        },
+      ],
     });
     const threads = threadsResult.map((thread) => thread.get({plain:true}));
     res.render("board", {
@@ -27,6 +33,7 @@ router.get("/board/:id", async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ "err": err });
   }
 });

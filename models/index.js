@@ -38,6 +38,10 @@ User.hasMany(Thread, {
     onDelete: 'CASCADE'
 });
 
+Thread.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
 //comments are children of user
 Comment.belongsTo(User, {
     foreignKey: 'commenter_id'
