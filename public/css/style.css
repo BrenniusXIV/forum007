@@ -113,6 +113,20 @@ h1 p{
     background-image: url(../images/threabox.jpg);
 }
 
+
+#maincreate {
+  position:relative; right: 70px; top:60px; 
+  color: #065b83;
+  
+  background-color: black;
+  font-size: 25px;
+}
+
+
+
+
+
+
 /* style for createthreads page */
 #thread-content {
     width: 100%;
