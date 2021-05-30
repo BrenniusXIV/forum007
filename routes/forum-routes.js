@@ -28,6 +28,10 @@ router.get("/board/:id", async (req, res) => {
       ],
     });
     const threads = threadsResult.map((thread) => thread.get({plain:true}));
+    if (threads.length === 0) {
+      res.status(404).render("page404")
+      return;
+    }
     res.render("board", {
       threads,
       logged_in: req.session.logged_in
