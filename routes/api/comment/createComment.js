@@ -6,7 +6,7 @@ module.exports = async function(req,res)
     {
         const commentPost = await Comment.create({
             ...req.body,
-            // comment_section_id: 1,
+            // commenter_id: req.session.user_id,
         });
         //return thread results
         res.status(200).json(commentPost);

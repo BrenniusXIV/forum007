@@ -112,6 +112,94 @@ h1 p{
     text-align: center;
     background-image: url(../images/threabox.jpg);
 }
+.thread-creator > h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.thread-created-date > p {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* style for createthreads page */
+#thread-content {
+    width: 100%;
+    height: 80px;
+}
+
+#titlelabel {
+  font-size: larger;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+
+
+
+#label {
+  margin-left: auto;
+  margin-right: auto;
+  font-style: oblique;
+}
+
+#createh3 {
+  color: blueviolet;
+  
+}
+
+
+ #ctmain {
+  background-color: darkgray;
+  padding: 10px 40px;
+} 
+
+#imgid {
+  height: 100px;
+  width: 130px;
+}
+
+#thread-title {
+  width: 100%;
+  height: 20px;
+  font-style: oblique;
+}
+
+
+
+
+#btn {
+  color: aliceblue;
+  font-style: oblique;
+  font-weight: bolder;
+  background-color: rgb(99, 12, 180);
+}
+
+ #bodyid {
+  background-color: black;
+} 
+
+#msg {
+  color: blueviolet;
+  font-weight:bolder;
+  font-size: larger;
+  font-display:inherit;
+  font-style: italic;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -128,7 +216,7 @@ h1 p{
 	overflow:hidden;
 } */
  
-
+/* 
 .snow1
 {
 	background:url(../images/snow.png);
@@ -153,9 +241,8 @@ h1 p{
 	top:0;
 	left:0;
 	animation:animateSecond 10s infinite linear;
-    vertical-align: bottom;
-    z-index: 2
-
+  vertical-align: bottom;
+  z-index: 2
 }
 
 /* test get div at same sibling level as snow */
@@ -167,6 +254,8 @@ h1 p{
 a {
     vertical-align: top;
 }
+*/
+
 
 
 

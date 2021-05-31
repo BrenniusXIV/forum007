@@ -32,6 +32,10 @@ app.use(session(sess));
 //make local directories accessible publicly
 app.use(express.static(__dirname));
 
+//using handlebars css
+app.use(express.static('public'));
+
+
 //set up the express app to handle incoming data payload
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
