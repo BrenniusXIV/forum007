@@ -53,7 +53,7 @@ router.get("/board/:id", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  res.render("login", { forum });
+  res.render("login");
 });
 
 router.get("/profile", async (req, res) => {
