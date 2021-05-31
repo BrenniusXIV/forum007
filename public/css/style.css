@@ -79,6 +79,16 @@ h1 p{
     font-size: 30px;
 }
 
+.login-form > div {
+  padding: 5px;
+}
+
+.create-account-form > div {
+  padding: 5px;
+}
+
+
+
 .no-button {
     background: none;
     border: none;
@@ -101,7 +111,7 @@ h1 p{
     justify-content: space-around;
 }
 
-.thread-preview {
+.content-preview {
     display: flex;
     width: 650px;
     flex-flow: column;
