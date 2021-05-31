@@ -30,7 +30,10 @@
             {{#each threads as |thread|}}
             <div class='thread-preview'>
                 <div class='thread-name'>
-                    <h1>{{thread.thread_name}}</h1>
+                    <a href='/thread/{{thread.id}}'><h1>{{thread.thread_name}}</h1></a>
+                </div>
+                <div class='thread-creator'>
+                    <p>Posted by: {{user.user_name}}</p>
                 </div>
                 <div class='thread-body'>
                     <p>{{thread.preview}}</p>
