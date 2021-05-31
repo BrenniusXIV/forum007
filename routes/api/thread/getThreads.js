@@ -1,6 +1,5 @@
 module.exports = async function(req,res)
 {
-
     const {Thread} = require('../../../models');
     try
     {
@@ -14,11 +13,3 @@ module.exports = async function(req,res)
     }
 
 }
-
-
-   
-     
-
-
-
-
