@@ -1,17 +1,18 @@
-<div class='thread-view'>
+<div class='thread-view content-preview'>
     <div class='thread-head'>
         <h2><p>{{thread.thread_name}}</p></h2>
+        <h3><p>Posted by: {{thread.user.user_name}}</p></h3>
         <p>{{thread.body}}</p>
     </div>
     <div class='comment-section'>
         {{#each comments as |comment|}}
         <div class='comment'>
-            <h4>{{user.user_name}}</h4>
+            <h4>{{user.user_name}} says:</h4>
             <p>{{comment.body}}</p>
         </div>
         {{/each}}
       <form class='comment-creation'>
-         <textarea type="text" class="textarea is-large" id="comment-content" name="comment-content" placeholder="comment content here"></textarea>   
+        <textarea type="text" class="textarea is-large" id="comment-content" name="comment-content" placeholder="comment content here"></textarea></br>
         <button id="btn"  class="createbtn">Create comment</button>
         <div id="msg">
           <pre></pre>
