@@ -53,7 +53,11 @@ router.get("/board/:id", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  res.render("login");
+  if (req.session.logged_in === true) {
+    res.redirect(`/profile`);
+  } else {
+    res.render("login");
+  }
 });
 
 router.get("/profile", async (req, res) => {
@@ -73,7 +77,8 @@ router.get("/profile", async (req, res) => {
         logged_in: true,
       });
     } else {
-      res.send(`You must be logged in to view your profile.`);
+      alert(`You must be logged in to view your profile.`);
+      res.render("login");
     }
   } catch (err) {
     res.status(500).json({ error: err });
