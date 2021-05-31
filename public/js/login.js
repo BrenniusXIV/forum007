@@ -24,7 +24,7 @@ async function onLogin(event)
     //check status
     if(loginResults.ok)
     {
-        document.location.replace('/profile');
+        document.location.replace('/');
     }
 }
 document
