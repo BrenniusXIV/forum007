@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 
 router.get("/board/:id", async (req, res) => {
   try {
+    const boardResult = await Board.findByPk(req.params.id)
     const threadsResult = await Thread.findAll({
       where: { board_id: req.params.id },
       include: [
@@ -27,7 +28,7 @@ router.get("/board/:id", async (req, res) => {
       ],
     });
     const threads = threadsResult.map((thread) => thread.get({ plain: true }));
-    if (threads.length === 0) {
+    if (!boardResult) {
       res.status(404).render("page404");
       return;
     }
