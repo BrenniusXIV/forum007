@@ -32,6 +32,20 @@ router.get("/board/:id", async (req, res) => {
       res.status(404).render("page404")
       return;
     }
+    console.log(JSON.stringify(threads));
+
+    //messy
+    for(let a in threads)
+    {
+        threads[a].preview = threads[a].body;
+        let charLength = 30;
+        if(threads[a].preview.length>charLength)
+        {
+            threads[a].preview = `${threads[a].preview.slice(0,charLength)}...`;
+        }
+    }
+
+
     res.render("board", {
       threads,
       logged_in: req.session.logged_in

@@ -1,15 +1,43 @@
-<div class='threads-list'>
-    {{#each threads as |thread|}}
-    <div class='thread-preview'>
-        <div class='thread-name'>
-            <h1>{{thread_name}}</h1>
+<body>
+    <div class='threads-list'>
+        <div class='thread-head'>
+        <h2><p>{{board.name}}</p></h2>
         </div>
-        <div class='thread-creator'>
-            <h3>Created by: {{user.user_name}}</h3>
+            {{!-- <link rel="stylesheet" href="createthread.css"> --}}
+        <section class="center">
+        <a href="index.html">
+            {{!-- wow someone really went ham with the caps --}}
+        <img class="animated-gif" src="/images/spalpha1.1.gif">
+        </a>
+        <h3 class="center title">Create New Thread Post</h3><hr>
+        <form class="main">
+            <div class="center">
+            <label for="thread-title">Title:</label>
+            <input class="input" type="text" id="thread-title" name="thread-title" placeholder="thread title here"/>
+            </div>
+            <div class="center">
+            <label for="thread-content">Content:</label>
+            <textarea type="text" class="textarea is-large" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
+            </div>
+            <button id="btn"  class="createbtn">Create Thread</button>
+            <div id="msg">
+            <pre></pre>
+            </div>
+        </form>
+        </section>
+
+        <div class='threads-section'>
+            {{#each threads as |thread|}}
+            <div class='thread-preview'>
+                <div class='thread-name'>
+                    <h1>{{thread.thread_name}}</h1>
+                </div>
+                <div class='thread-body'>
+                    <p>{{thread.preview}}</p>
+                </div>
+            </div>
+            {{/each}}
         </div>
-        <div class='thread-created-date'>
-            <p>Date created:</br>{{date_created}}</p>
-        </div>
+        <script src="/js/createthread.js" async defer></script>
     </div>
-    {{/each}}
-</div>
+</body>
