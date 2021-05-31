@@ -10,5 +10,14 @@
             <p>{{comment.body}}</p>
         </div>
         {{/each}}
+      <form class='comment-creation'>
+         <textarea type="text" class="textarea is-large" id="comment-content" name="comment-content" placeholder="comment content here"></textarea>   
+        <button id="btn"  class="createbtn">Create comment</button>
+        <div id="msg">
+          <pre></pre>
+        </div>
+      </form>  
     </div>
+         <script src="/js/createcomment.js" async defer></script>
+
 </div>
