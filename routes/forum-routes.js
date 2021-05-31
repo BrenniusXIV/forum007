@@ -78,7 +78,6 @@ router.get("/profile", async (req, res) => {
         logged_in: true,
       });
     } else {
-      alert(`You must be logged in to view your profile.`);
       res.render("login");
     }
   } catch (err) {
