@@ -18,5 +18,10 @@ async function onLogout(event) {
         document.location.replace('/login');
     }
 }
-console.log(document.querySelector('#logout'))
-document.querySelector('#logout').addEventListener('click', onLogout)
+
+//try to get logout button
+let logoutButton = document.querySelector('#logout');
+if(logoutButton!==null)
+{
+    document.querySelector('#logout').addEventListener('click', onLogout)
+}
