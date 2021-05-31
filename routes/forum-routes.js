@@ -46,15 +46,34 @@ router.get("/board/:id", async (req, res) => {
     }
 
 
-    res.render("board", {
-      threads,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ "err": err });
-  }
+router.get('/login', async (req, res) => {
+    res.render('login', {forum});
 });
+
+router.get('/profile', async (req, res) => {
+    //get user data from session
+    try {
+        if (req.session.logged_in === true) {
+            const userData = await User.findOne({
+                where: {
+                    id: req.session.user_id
+                }
+            });
+            //serialize user data
+            const user = userData.get({plain:true});
+            //pass user to profile
+            res.render('profile', {
+                ...user,
+                logged_in:true
+            });
+        } else {
+            res.send(`You must be logged in to view your profile.`)
+        }
+    } catch (err) {
+        res.status(500).json({"error": err})
+    }
+});
+
 
 router.get("/thread/:id", async (req, res) => {
   const threadData = await Thread.findByPk(req.params.id, 
