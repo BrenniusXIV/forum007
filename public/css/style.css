@@ -33,7 +33,7 @@ header {
     padding-right: 70px;
     padding-left: 30px;
 }
-header > img.animated-gif{
+header > a > img.animated-gif{
     width: 120px;
     height: auto;
   }
