@@ -40,6 +40,7 @@ h1 {
     -webkit-text-stroke: thin #060808;
     background-image: linear-gradient(to left, #2ecc71, #3498db, #9b59b6, #f39c12);
     -webkit-background-clip: text;
+    background-clip: text;
     animation: animate 5s linear infinite;
     -webkit-background-size: 200%;
     background-size: 200%;
@@ -78,7 +79,7 @@ h1 p{
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: #065b83;
     text-decoration: none;
     font-size: 100%;
 }
