@@ -1,0 +1,253 @@
+html {
+    background:url(../images/vaporgifa.gif);
+	background-size:cover;
+	width:100%;
+	height: auto;
+	position:relative;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-size:cover;
+    background-image: url('../images/R8bab0125929879783d73930d66fab88d.gif');
+    padding-right: 70px;
+    padding-left: 30px;
+}
+header > a > img.animated-gif{
+    width: 200px;
+    height: auto;
+}
+/* for logo in /board */
+.animated-gif {
+  width: 25%;
+}
+
+a:link {
+    color: #065b83;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #065b83;
+    text-decoration: none;
+}
+
+h1 {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: thin #060808;
+    background-image: linear-gradient(to left, #2ecc71, #3498db, #9b59b6, #f39c12);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animate 5s linear infinite;
+    -webkit-background-size: 200%;
+    background-size: 200%;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 100%;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 100%;
+    }
+}
+
+h1 p{
+    font-size: 2em;
+}
+
+.login {
+    font-size: 30px;
+}
+
+.login-form > div {
+  padding: 5px;
+}
+
+.create-account-form > div {
+  padding: 5px;
+}
+
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #065b83;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+.no-button:hover {
+    color: #065b83;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.content-preview {
+    display: flex;
+    width: 650px;
+    flex-flow: column;
+    justify-content: space-around;
+    margin: 5px;
+    border-radius: 10px;
+    border: 3px solid salmon;
+    text-align: center;
+    background-image: url(../images/threabox.jpg);
+    background-size: 100% 100%;
+    align-items: center;
+}
+
+.create-thread-form > * {
+  align-items: center;
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.thread-creator > h3 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.thread-created-date > p {
+  text-align: left;
+  padding-left: 20px;
+}
+
+pre {
+  background-color: white;
+  border-radius: 1px;
+}
+
+.comment-section {
+  border-top: 5px solid rgba(0,255,255, 0.3 );
+  width: 100%;
+}
+.comment {
+  border-bottom: 3px dashed rgba(0,255,255, 0.3 );
+}
+.comment-creation {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.comment-creation > * {
+  align-items: center;
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.comment-creation > textarea {
+  resize: none;
+  height: 120px;
+}
+.comment-creation > * {
+  width: 69%;
+}
+/* style for createthreads page */
+#thread-content {
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+
+#titlelabel {
+  font-size: larger;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+#label {
+  margin-left: auto;
+  margin-right: auto;
+  font-style: oblique;
+}
+
+#createh3 {
+  color: blueviolet;
+  
+}
+
+
+ #ctmain {
+  background-color: darkgray;
+  padding: 10px 40px;
+} 
+
+#imgid {
+  height: 100px;
+  width: 130px;
+}
+
+#thread-title {
+  width: 100%;
+  height: 20px;
+  font-style: oblique;
+  border-radius: 0;
+}
+
+
+
+
+#btn {
+  color: aliceblue;
+  font-style: oblique;
+  font-weight: bolder;
+  background-color: rgb(99, 12, 180);
+  margin-top: 3px;
+}
+
+ #bodyid {
+  background-color: black;
+} 
+
+#msg {
+  color: blueviolet;
+  font-weight:bolder;
+  font-size: larger;
+  font-display:inherit;
+  font-style: italic;
+  
+}
+
+.user-form {
+  display: flex;
+  width: 650px;
+  flex-flow: column;
+  justify-content: space-around;
+  margin: 5px;
+  border-radius: 10px;
+  border: 3px solid salmon;
+  text-align: center;
+  background-image: url(../images/threabox.jpg);
+}
+.user-form > * {
+  margin: 5px;
+}
+
+/* test get div at same sibling level as snow */
+.mainContent{
+    vertical-align: top;
+    z-index: 1
+}
+
+a {
+    vertical-align: top;
+}

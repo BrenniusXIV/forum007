@@ -1,0 +1,9 @@
+{{#each boards as |board|}}
+<div class="content-preview">
+    <div class="thread">
+        <h2><a href="/board/{{board.id}}">{{board.name}}</a></h2></br>
+        <p>Board originally created:</br>
+        {{board.date_created}}</p>
+    </div>
+</div>
+{{/each}}

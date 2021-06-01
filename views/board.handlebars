@@ -1,0 +1,48 @@
+<div class='threads-list'>
+    <section class="center">
+    <div class="content-preview">
+        <h1>{{boardName}}</h1>
+        <a href="/">
+            <img class="animated-gif" src="/images/spalpha1.1.gif">
+            <h3>Back to Homepage</h3>
+        </a>
+        <h3 class="center title"><a href="#thread-content">Create New Thread</a></h3><hr>
+    </div>
+    </section>
+
+    <div class='threads-section'>
+        {{#each threads as |thread|}}
+        <div class='content-preview'>
+            <div class='thread-name'>
+                <a href='/thread/{{thread.id}}'><h2>{{thread.thread_name}}</h2></a>
+            </div>
+            <div class='thread-creator'>
+                <p>Posted by: {{user.user_name}}</p>
+            </div>
+            <div class='thread-body'>
+                <p>{{thread.preview}}</p>
+            </div>
+            <div class='thread-date'>
+                <p>Posted:</br>{{thread.date_created}}</p>
+            </div>
+        </div>
+        {{/each}}
+        <form class="content-preview create-thread-form">
+            <h3 class="center title">Create New Thread</h3><hr>
+            <div class="create-thread-title">
+                <label for="thread-title">Title:</label>
+                <input type="text" id="thread-title" name="thread-title" placeholder="thread title here"/>
+            </div>
+            <div class="create-thread-content">
+                <label for="thread-content">Content:</label>
+                <textarea type="text" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
+            </div>
+            
+            <button id="btn" class="createbtn">Create Thread</button>
+            <div id="msg">
+                <pre></pre>
+            </div>
+        </form>
+    </div>
+    <script src="/js/createthread.js" async defer></script>
+</div>

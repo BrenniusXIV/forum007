@@ -1,0 +1,22 @@
+<div class="user-page">
+    <form class="user-form">
+        <h3>Profile</h3>
+        <div>
+            <label for="name-create">Display name:</label><br/>
+            <input type="text" id="name-create" value="{{user_name}}">
+        </div>
+        <div>
+            <label for="email-user">E-Mail:</label><br/>
+            <input type="text" id="email-user" value="{{email}}"/>
+        </div>
+        <div>
+            <label for="password-field">Password:</label><br/>
+            <input type="password" id="password-field" value="{{password}}"/>
+        </div>
+        <div>
+            <button id="update-button" userEmail="{{email}}" userName="{{user_name}}" userId="{{id}}" class="update-button" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/profile.js"></script>

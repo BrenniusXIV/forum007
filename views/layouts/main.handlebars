@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body class="section">
+    <div class="flex-colum justify-space-around mainContent">
+        <header class="display-flex justify-space-between align-center p-2">
+            <a href="/"><IMG class="animated-gif" SRC="/images/spalpha1.1.gif"></a>
+            <h1 style="margin-left: auto;">
+                    <p>SPECTRE!</p>
+            </h1>
+            <nav class="login" style="margin-left: auto;">
+                {{#if logged_in}}
+                <button class="no-button" id="update-profile"><a href="/profile">Profile</a></button>
+                <button class="no-button" id="logout">Logout</button>
+                {{else}}
+                <a id="loginButton" href="/login">Login</a>
+                {{/if}}
+                 {{!-- <button href="/profile" class="update-profile" id="update-profile">Update Profile</button>
+ --}}
+            </nav>
+        </header>
+        <main class="container container-fluid mt-5">
+            {{{ body }}}
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+
+
+    <script src="/js/logout.js"></script>
+</body>
+
+</html>
