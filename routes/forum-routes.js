@@ -104,6 +104,7 @@ router.get("/thread/:id", async (req, res) => {
   });
   const comments = commentData.map((comment) => comment.get({ plain: true }));
   const thread = threadData.get({ plain: true });
+  console.log("comments: " + JSON.stringify(comments));
   res.render("thread", {
     thread,
     comments,

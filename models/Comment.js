@@ -29,6 +29,10 @@ Comment.init(
                 key: "id",
             },
         },
+        comment_vote: {
+            type: DataTypes.INTEGER,
+            allowNull:false,
+        },
     },
     {
     sequelize,
