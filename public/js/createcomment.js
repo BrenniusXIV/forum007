@@ -10,8 +10,17 @@ async function postData(data)
     return fetchResult;
 }
 
-
-
+async function putData(id, data)
+{
+    let fetchResult = await fetch(`/api/comment/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return fetchResult;
+}
 
 
 const createComment = async (ev)=>{
@@ -21,6 +30,7 @@ const createComment = async (ev)=>{
     let comment = {
         body: document.getElementById('comment-content').value,
         thread_id: threadID,
+        comment_vote:0
     }
     if (!comment.body){
         alert('Comments cannot be blank!')
@@ -40,3 +50,67 @@ const createComment = async (ev)=>{
     
 }
 document.getElementById('btn').addEventListener('click', createComment);
+
+
+const updateComment = async (id, commentInfo)=>{
+    const queryString = window.location.pathname;
+    let threadID = queryString.split("/").pop();
+
+    let comment = {
+        ...commentInfo,
+        thread_id: threadID,
+    }
+
+    if (!comment.body){
+        alert('pleezzze dont post blank comments.')
+        return
+    }
+    // threads.push(thread);
+    document.forms[0].reset(); // to clear the form for the next entries
+    //document.querySelector('form').reset();
+
+    //for display purposes only
+    console.warn('added' , {comment} );
+    let pre = document.querySelector('#msg pre');
+    // pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
+    pre.textContent = "Comment Updated";
+    //saving to localStorage
+    localStorage.setItem('threadList', JSON.stringify(comment) );
+    console.log(JSON.stringify(comment));
+    let commentResults = await putData(id, comment);
+    window.location.reload();
+}
+
+function incrementVote()
+{
+    let commentID = this.parentNode.getAttribute("commentID");
+    let commentVote = this.parentNode.getAttribute("commentVote");
+    let commentBody = this.parentNode.getAttribute("commentBody");
+    commentVote++;
+    updateComment(commentID, {
+        comment_vote:commentVote,
+        body:commentBody
+    })
+}
+
+function decrementVote()
+{
+    let commentID = this.parentNode.getAttribute("commentID");
+    let commentVote = this.parentNode.getAttribute("commentVote");
+    let commentBody = this.parentNode.getAttribute("commentBody");
+    commentVote--;
+    updateComment(commentID, {
+        comment_vote:commentVote,
+        body:commentBody
+    })
+}
+
+// document.addEventListener('DOMContentLoaded', ()=>{
+let thumbsUpArray = document.getElementsByClassName('thumbsUpButton');
+for(let i = 0; i < thumbsUpArray.length; i++) {
+    thumbsUpArray[i].addEventListener("click",incrementVote)
+}
+let thumbsDownArray = document.getElementsByClassName('thumbsDownButton');
+for(let i = 0; i < thumbsDownArray.length; i++) {
+    thumbsDownArray[i].addEventListener("click",decrementVote)
+}

@@ -7,9 +7,17 @@
     </div>
     <div class='comment-section'>
         {{#each comments as |comment|}}
+      <div class='content-preview'>
         <div class='comment'>
             <h4>{{user.user_name}} says:</h4>
             <p>{{comment.body}}</p>
+            <div commentBody="{{comment.body}}" commentID="{{comment.id}}" commentVote="{{comment.comment_vote}}" style="display: flex;align-items: center;justify-content: left;">
+              <button class="fa fa-thumbs-o-up thumbsUpButton" aria-hidden="true" style="margin-left:10px;margin-right:2px"></button>
+              <button class="fa fa-thumbs-o-down thumbsDownButton" aria-hidden="true" style="margin-right:5px"></button>
+              <h3>{{comment.comment_vote}}</h3>
+            </div>
+            
+        </div>
         </div>
         {{/each}}
       <form class='comment-creation'>
