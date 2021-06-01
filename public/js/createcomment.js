@@ -67,18 +67,16 @@ const updateComment = async (id, commentInfo)=>{
     }
     // threads.push(thread);
     document.forms[0].reset(); // to clear the form for the next entries
-    //document.querySelector('form').reset();
 
-    //for display purposes only
-    console.warn('added' , {comment} );
-    let pre = document.querySelector('#msg pre');
-    // pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
-    pre.textContent = "Comment Updated";
-    //saving to localStorage
-    localStorage.setItem('threadList', JSON.stringify(comment) );
-    console.log(JSON.stringify(comment));
     let commentResults = await putData(id, comment);
-    window.location.reload();
+
+    let pre = document.querySelector('#msg pre');
+    if (commentResults.ok) {
+        pre.textContent = "Comment updated!"
+        document.location.reload();
+    } else {
+        pre.textContent = "Comment update failed. Make sure you're logged in!"
+    }
 }
 
 function incrementVote()
