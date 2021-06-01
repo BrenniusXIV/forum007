@@ -94,6 +94,10 @@ router.get("/thread/:id", async (req, res) => {
         model: User,
         attributes: ['user_name'],
       },
+      {
+        model: Board,
+        attributes: ['name']
+      },
     ],
   });
   const commentData = await Comment.findAll({
