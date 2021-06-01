@@ -238,6 +238,9 @@ pre {
   text-align: center;
   background-image: url(../images/threabox.jpg);
 }
+.user-form > * {
+  margin: 5px;
+}
 
 /* test get div at same sibling level as snow */
 .mainContent{
