@@ -20,13 +20,17 @@ const createThread = async (ev)=>{
         board_id: boardID
     }
     document.forms[0].reset(); // to clear the form for the next entries
-    //for display purposes only
-    let pre = document.querySelector('#msg pre');
-    pre.textContent = "Thread Created";
-    //saving to localStorage
+    
     let threadResults = await postData(thread);
-
-    document.location.reload();
+    
+    let pre = document.querySelector('#msg pre'); //message to append describing posting status
+    
+    if (threadResults.ok) {
+        pre.textContent = "Thread Created";
+        document.location.reload();
+    } else {
+        pre.textContent = "Thread creation failed. Make sure you're logged in!"
+    }
 }
     document.getElementById('btn').addEventListener('click', createThread);
 
