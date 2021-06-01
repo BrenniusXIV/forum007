@@ -26,6 +26,12 @@ async function onCreateUser(event)
     if(loginResults.ok)
     {
         document.location.replace('/profile');
+    } else if (loginResults.status === 409) {
+        alert('Your username or e-mail address is already in use. Please try again.')
+        return
+    } else {
+        alert('Something else went wrong. Please let us know if you hit this error!')
+        return
     }
 }
 
