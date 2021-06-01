@@ -19,11 +19,12 @@ async function postData(data)
 
 const createComment = async (ev)=>{
     ev.preventDefault();  //to stop the form submitting
+    const queryString = window.location.pathname;
+    let threadID = queryString.split("/").pop();
     let comment = {
         // id: Date.now(),
         body: document.getElementById('comment-content').value,
-        thread_id: 1,
-        commenter_id: 1,
+        thread_id: threadID,
         // board_id: text
         // board_id: //await grabbing board where: {name: name}
     }
@@ -44,7 +45,7 @@ const createComment = async (ev)=>{
     localStorage.setItem('threadList', JSON.stringify(comment) );
     console.log(JSON.stringify(comment));
     let commentResults = await postData(comment);
-    
+    document.location.reload();
 }
 // document.addEventListener('DOMContentLoaded', ()=>{
 document.getElementById('btn').addEventListener('click', createComment);
