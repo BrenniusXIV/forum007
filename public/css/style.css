@@ -124,6 +124,7 @@ h1 p{
     border: 3px solid salmon;
     text-align: center;
     background-image: url(../images/threabox.jpg);
+    background-size: 100% 100%;
 }
 .thread-creator > h3 {
   text-align: left;
@@ -135,6 +136,7 @@ h1 p{
   padding-left: 20px;
 }
 
+
 .main-top {
   display: flex;
     width: 650px;
@@ -145,6 +147,21 @@ h1 p{
     border: 3px solid salmon;
     text-align: center;
     background-image: url(../images/threabox.jpg);
+}
+
+.comment-section {
+  border-top: 5px solid rgba(0,255,255, 0.3 );
+}
+.comment {
+  border-bottom: 3px dashed rgba(0,255,255, 0.3 );
+}
+.comment-creation {
+  padding: 20px;
+}
+.comment-creation > textarea {
+  resize: none;
+  height: 120px;
+  width: 450px;
 }
 /* style for createthreads page */
 #thread-content {
