@@ -25,6 +25,9 @@ async function onLogin(event)
     if(loginResults.ok)
     {
         document.location.replace('/');
+    } else {
+        alert('Login information incorrect. Please try again.')
+        return;
     }
 }
 document
