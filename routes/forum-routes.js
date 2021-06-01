@@ -17,7 +17,9 @@ router.get("/", async (req, res) => {
 
 router.get("/board/:id", async (req, res) => {
   try {
-    const boardResult = await Board.findByPk(req.params.id)
+    const boardResult = await Board.findByPk(req.params.id, {
+      raw: true,
+    });
     const threadsResult = await Thread.findAll({
       where: { board_id: req.params.id },
       include: [
@@ -32,8 +34,7 @@ router.get("/board/:id", async (req, res) => {
       res.status(404).render("page404");
       return;
     }
-    console.log(JSON.stringify(threads));
-
+    const boardName = boardResult.name;
     //messy
     for (let a in threads) {
       threads[a].preview = threads[a].body;
@@ -45,6 +46,7 @@ router.get("/board/:id", async (req, res) => {
 
     res.render("board", {
       threads,
+      boardName,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
