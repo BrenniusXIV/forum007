@@ -1,10 +1,7 @@
 <div class='threads-list'>
-    <div class='thread-head'>
-    <h2><p>{{board.name}}</p></h2>
-    </div>
     <section class="center">
-    <form class="main-top">
-        <h2>{{boardName}}</h2>
+    <form class="content-preview">
+        <h1>{{boardName}}</h1>
         <a href="/">
             <img class="animated-gif" src="/images/spalpha1.1.gif">
             <h3>Back to Homepage</h3>
@@ -17,13 +14,16 @@
         {{#each threads as |thread|}}
         <div class='content-preview'>
             <div class='thread-name'>
-                <a href='/thread/{{thread.id}}'><h1>{{thread.thread_name}}</h1></a>
+                <a href='/thread/{{thread.id}}'><h2>{{thread.thread_name}}</h2></a>
             </div>
             <div class='thread-creator'>
                 <p>Posted by: {{user.user_name}}</p>
             </div>
             <div class='thread-body'>
                 <p>{{thread.preview}}</p>
+            </div>
+            <div class='thread-date'>
+                <p>Posted:</br>{{thread.date_created}}</p>
             </div>
         </div>
         {{/each}}
