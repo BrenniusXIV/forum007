@@ -4,37 +4,43 @@
         <h2><p>{{board.name}}</p></h2>
         </div>
         <section class="center">
-        <a href="index.html">
-        <img class="animated-gif" src="/images/spalpha1.1.gif">
-        </a>
-        <h3 class="center title">Create New Thread Post</h3><hr>
-        <form class="main">
-            <div class="center">
-            <label for="thread-title">Title:</label>
-            <input class="input" type="text" id="thread-title" name="thread-title" placeholder="thread title here"/>
-            </div>
-            <div class="center">
-            <label for="thread-content">Content:</label>
-            <textarea type="text" class="textarea is-large" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
-            </div>
-            <button id="btn"  class="createbtn">Create Thread</button>
-            <div id="msg">
-            <pre></pre>
-            </div>
+        <form class="main-top">
+            <a href="/">
+                <img class="animated-gif" src="/images/spalpha1.1.gif">
+            </a>
+            <h3 class="center title"><a href="#thread-content">Create New Thread Post</a></h3><hr>
         </form>
         </section>
 
         <div class='threads-section'>
             {{#each threads as |thread|}}
-            <div class='thread-preview'>
+            <div class='content-preview'>
                 <div class='thread-name'>
-                    <h1>{{thread.thread_name}}</h1>
+                    <a href='/thread/{{thread.id}}'><h1>{{thread.thread_name}}</h1></a>
+                </div>
+                <div class='thread-creator'>
+                    <p>Posted by: {{user.user_name}}</p>
                 </div>
                 <div class='thread-body'>
                     <p>{{thread.preview}}</p>
                 </div>
             </div>
             {{/each}}
+            <form class="main">
+                <h3 class="center title">Create New Thread Post</h3><hr>
+                <div class="center">
+                    <label for="thread-title">Title:</label>
+                    <input class="input" type="text" id="thread-title" name="thread-title" placeholder="thread title here"/>
+                </div>
+                <div class="center">
+                    <label for="thread-content">Content:</label>
+                    <textarea type="text" class="textarea is-large" id="thread-content" name="thread-content" placeholder="thread content here"></textarea>
+                </div>
+                <button id="btn"  class="createbtn">Create Thread</button>
+                <div id="msg">
+                    <pre></pre>
+                </div>
+            </form>
         </div>
         <script src="/js/createthread.js" async defer></script>
     </div>

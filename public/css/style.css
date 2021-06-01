@@ -2,7 +2,7 @@ html {
     background:url(../images/vaporgifa.gif);
 	background-size:cover;
 	width:100%;
-	height:650px;
+	height: auto;
 	position:relative;
 }
 
@@ -16,11 +16,14 @@ header {
     padding-right: 70px;
     padding-left: 30px;
 }
-header > img.animated-gif{
-    width: 120px;
+header > a > img.animated-gif{
+    width: 200px;
     height: auto;
 }
-
+/* for logo in /board */
+.animated-gif {
+  width: 25%;
+}
 
 a:link {
     color: #065b83;
@@ -62,6 +65,14 @@ h1 p{
     font-size: 30px;
 }
 
+.login-form > div {
+  padding: 5px;
+}
+
+.create-account-form > div {
+  padding: 5px;
+}
+
 .no-button {
     background: none;
     border: none;
@@ -82,9 +93,10 @@ h1 p{
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-around;
+    padding-top: 40px;
 }
 
-.thread-preview {
+.content-preview {
     display: flex;
     width: 650px;
     flex-flow: column;
@@ -94,6 +106,7 @@ h1 p{
     border: 3px solid salmon;
     text-align: center;
     background-image: url(../images/threabox.jpg);
+    background-size: 100% 100%;
 }
 .thread-creator > h3 {
   text-align: left;
@@ -105,6 +118,33 @@ h1 p{
   padding-left: 20px;
 }
 
+
+.main-top {
+  display: flex;
+    width: 650px;
+    flex-flow: column;
+    justify-content: space-around;
+    margin: 5px;
+    border-radius: 10px;
+    border: 3px solid salmon;
+    text-align: center;
+    background-image: url(../images/threabox.jpg);
+}
+
+.comment-section {
+  border-top: 5px solid rgba(0,255,255, 0.3 );
+}
+.comment {
+  border-bottom: 3px dashed rgba(0,255,255, 0.3 );
+}
+.comment-creation {
+  padding: 20px;
+}
+.comment-creation > textarea {
+  resize: none;
+  height: 120px;
+  width: 450px;
+}
 /* style for createthreads page */
 #thread-content {
     width: 100%;
@@ -116,9 +156,6 @@ h1 p{
   font-weight: bolder;
   font-style: italic;
 }
-
-
-
 
 #label {
   margin-left: auto;
@@ -169,6 +206,18 @@ h1 p{
   font-display:inherit;
   font-style: italic;
   
+}
+
+.user-form {
+  display: flex;
+  width: 650px;
+  flex-flow: column;
+  justify-content: space-around;
+  margin: 5px;
+  border-radius: 10px;
+  border: 3px solid salmon;
+  text-align: center;
+  background-image: url(../images/threabox.jpg);
 }
 
 /* test get div at same sibling level as snow */

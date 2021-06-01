@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 
 router.get("/board/:id", async (req, res) => {
   try {
+    const boardResult = await Board.findByPk(req.params.id)
     const threadsResult = await Thread.findAll({
       where: { board_id: req.params.id },
       include: [
@@ -27,7 +28,7 @@ router.get("/board/:id", async (req, res) => {
       ],
     });
     const threads = threadsResult.map((thread) => thread.get({ plain: true }));
-    if (threads.length === 0) {
+    if (!boardResult) {
       res.status(404).render("page404");
       return;
     }
@@ -53,7 +54,11 @@ router.get("/board/:id", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  res.render("login", { forum });
+  if (req.session.logged_in === true) {
+    res.redirect(`/profile`);
+  } else {
+    res.render("login");
+  }
 });
 
 router.get("/profile", async (req, res) => {
@@ -73,7 +78,7 @@ router.get("/profile", async (req, res) => {
         logged_in: true,
       });
     } else {
-      res.send(`You must be logged in to view your profile.`);
+      res.render("login");
     }
   } catch (err) {
     res.status(500).json({ error: err });
@@ -85,6 +90,7 @@ router.get("/thread/:id", async (req, res) => {
     include: [
       {
         model: User,
+        attributes: ['user_name'],
       },
     ],
   });
