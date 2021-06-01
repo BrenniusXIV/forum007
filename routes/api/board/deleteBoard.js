@@ -10,12 +10,6 @@ module.exports = async function(req,res)
       { 
           where: { 
             id: req.params.id,
-            // user_id: req.session.user_id,
-            // threads_id: req.session.thead_id,
-            // comments_id: req.session.comments_id,
-            // comments_section_id: req.session.comments_section_id,
-    
-        
         }   
       });
     //return board status/error

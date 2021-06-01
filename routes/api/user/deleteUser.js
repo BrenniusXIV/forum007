@@ -8,7 +8,7 @@ module.exports = async function(req,res)
         //delete user
         const userResults = await User.destroy(
         { 
-            where: { id: req.params.id }    //get user id from params
+            where: { id: req.params.id } 
         });
         //return user results
         res.status(200).json(userResults);

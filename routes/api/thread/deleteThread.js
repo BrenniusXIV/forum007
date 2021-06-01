@@ -1,5 +1,3 @@
-
-
 module.exports = async function(req,res)
 {
     const { Thread } = require("../../../models");
@@ -19,10 +17,3 @@ module.exports = async function(req,res)
       res.status(500).json(err);
     }
 }
-
-
-
-
-
-   
-

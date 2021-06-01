@@ -20,18 +20,14 @@ const createThread = async (ev)=>{
         board_id: boardID
     }
     document.forms[0].reset(); // to clear the form for the next entries
-    //document.querySelector('form').reset();
-
     //for display purposes only
     let pre = document.querySelector('#msg pre');
-    // pre.textContent = '\n' + JSON.stringify(threads, '\t', 2);
     pre.textContent = "Thread Created";
     //saving to localStorage
     let threadResults = await postData(thread);
 
     document.location.reload();
 }
-// document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', createThread);
 
 

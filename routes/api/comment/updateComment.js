@@ -4,9 +4,9 @@ module.exports = async function(req,res)
 
     try 
     {
-        const commentPost = await Comment.update(  //.bypk
+        const commentPost = await Comment.update( 
         {
-            ...req.body, //delete
+            ...req.body,
         },
         {
             where: { id: req.params.id } 
