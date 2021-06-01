@@ -8,17 +8,12 @@ module.exports = async function(req,res)
   //update user
   const boardResults = await Board.update(
     {
-        ...req.body,
+      ...req.body,
     },
     { 
-         where: { 
-             id: req.params.id,
-            //     user_id: req.session.user_id,
-            //  threads_id: req.session.thead_id,
-            //  comments_id: req.session.comments_id,
-            //  comments_section_id: req.session.comments_section_id,
-    
-            }    
+      where: { 
+         id: req.params.id,
+      }    
     });
           //return board status/error
       res.status(200).json(boardResults);

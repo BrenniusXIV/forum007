@@ -12,7 +12,7 @@ module.exports = async function(req,res)
         },
         { 
             individualHooks: true,
-            where: { id: req.params.id }    //get user id from params
+            where: { id: req.params.id } 
         });
         //return user results
         res.status(200).json(userResults);

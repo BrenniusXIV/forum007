@@ -11,13 +11,15 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json({ err: err });
+    res.status(500).json({ "err": err });
   }
 });
 
 router.get("/board/:id", async (req, res) => {
   try {
-    const boardResult = await Board.findByPk(req.params.id)
+    const boardResult = await Board.findByPk(req.params.id, {
+      raw: true,
+    });
     const threadsResult = await Thread.findAll({
       where: { board_id: req.params.id },
       include: [
@@ -32,8 +34,7 @@ router.get("/board/:id", async (req, res) => {
       res.status(404).render("page404");
       return;
     }
-    console.log(JSON.stringify(threads));
-
+    const boardName = boardResult.name;
     //messy
     for (let a in threads) {
       threads[a].preview = threads[a].body;
@@ -45,11 +46,12 @@ router.get("/board/:id", async (req, res) => {
 
     res.render("board", {
       threads,
+      boardName,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ err: err });
+    res.status(500).json({ "err": err });
   }
 });
 
@@ -81,7 +83,7 @@ router.get("/profile", async (req, res) => {
       res.render("login");
     }
   } catch (err) {
-    res.status(500).json({ error: err });
+    res.status(500).json({ "err": err });
   }
 });
 
@@ -90,6 +92,11 @@ router.get("/thread/:id", async (req, res) => {
     include: [
       {
         model: User,
+        attributes: ['user_name'],
+      },
+      {
+        model: Board,
+        attributes: ['name']
       },
     ],
   });
