@@ -47,31 +47,3 @@ app.use(routes);  //sometimes i'll call "/routes" -> "/apis"
 sequelize.sync({ force: false }).then(() => {
     app.listen(port, () => console.log(`App listening on PORT ${port}`));
 })
-
-
-// mysql://
-// beb8dda59d72ca
-
-// 2e1a270b
-
-// us-cdbr-east-03.cleardb.com
-
-
-
-// const ID = 'DbAgent:';
-
-// const connection = mysql.createConnection({
-//     host: 'us-cdbr-east-03.cleardb.com',
-//     user: 'beb8dda59d72ca',
-//     password: '2e1a270b',
-//     database: 'Forum_007_DB',
-//     port: '3306',
-//     queueLimit : 0,
-//     connectionLimit : 0
-//  });
-
-
-// connection.connect(function(err) {
-//     if (err) throw err;
-//     else console.log(ID + 'now connected to Forum_DB');
-// });
